@@ -3,7 +3,6 @@ function updateSubtotal(product) {
   const price = Number(product.querySelector('.price span').textContent)
   const quantity = Number(product.querySelector('.quantity input').value)
   const subtotal = quantity * price
-  console.log(typeof quantity)
   product.querySelector('.subtotal span').textContent = subtotal.toFixed(2)
   return subtotal
 }
@@ -18,11 +17,10 @@ function calculateAll() {
   return total
 }
 
-// ITERATION 4
-
 function removeProduct(event) {
   const target = event.currentTarget
   const product = target.parentNode.parentNode
+  console.log(product)
   const actualTotal = Number(
     document.querySelector('#total-value span').textContent
   )
